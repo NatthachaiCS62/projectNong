@@ -1,0 +1,120 @@
+/* src/tailwind.css */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* เพิ่มสีที่ถูกใช้งานบ่อยๆ */
+:root {
+  --primary-color: #333; /* สีหลัก */
+  --secondary-color: #4caf50; /* สีรอง */
+  --accent-color: #ffd700; /* สีเน้น */
+}
+
+/* กำหนดสีพื้นหลังสำหรับหน้าเว็บ */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: var(--primary-color);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* ป้องกัน Header จากการหดลงเมื่อมีเนื้อหามาก */
+  position: fixed; /* ทำให้ Header ติดอยู่ด้านบน */
+  width: 100%; /* ทำให้ Header ขยายเต็มความกว้างของหน้าจอ */
+  z-index: 1000; /* กำหนดลำดับชั้นให้ Header อยู่ด้านบนสุด */
+}
+/* กำหนดสีพื้นหลังของ Navbar */
+.navbar {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px;
+  
+}
+
+/* กำหนดสไตล์ของปุ่ม */
+.btn {
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+/* กำหนดรูปภาพพื้นหลังของหน้าเว็บ */
+.app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('D:\myProject\work1\react-project-app\src\picture\BG_หน้าต่างรวม (2).png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  min-height: 100vh; /* ทำให้เต็มสูงของหน้าจอ */
+}
+
+
+/* กำหนดสีพื้นหลังของ Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  flex-shrink: 0; /* ป้องกัน Footer จากการหดลงเมื่อมีเนื้อหามาก */
+  position: fixed; /* ทำให้ Footer ติดอยู่ด้านล่าง */
+  bottom: 0; /* ทำให้ Footer ติดอยู่ด้านล่าง */
+  width: 100%; /* ทำให้ Footer ขยายเต็มความกว้างของหน้าจอ */
+}
+
+.login {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('D:\myProject\work1\react-project-app\src\picture\BG_หน้าเข้าสู่ระบบ.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  min-height: 100vh; /* ทำให้เต็มสูงของหน้าจอ */
+}
+
+.border {
+  background-color: rgba(117, 108, 108, 0.5); 
+  border: 5px rgba(134, 126, 126, 0.5);
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 10px 10px 10px ;
+  width: 300px;
+  height: 300px;
+  align-items: center;
+  flex-direction: column;
+}
