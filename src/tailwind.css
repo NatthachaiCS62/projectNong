@@ -70,7 +70,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('D:\myProject\work1\react-project-app\src\picture\BG_หน้าต่างรวม (2).png');
+  background-image: url('assets\BG_หน้าต่างรวม.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -97,7 +97,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('D:\myProject\work1\react-project-app\src\picture\BG_หน้าเข้าสู่ระบบ.png');
+  background-image: url('assets\BG_หน้าเข้าสู่ระบบ.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

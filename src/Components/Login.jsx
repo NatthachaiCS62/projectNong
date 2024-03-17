@@ -6,32 +6,33 @@ const Login = () => {
     const [email, setEmail] = useState(''); // กำหนดค่าเริ่มต้นของ email เป็น ''
     const [password, setPassword] = useState(''); // กำหนดค่าเริ่มต้นของ password เป็น ''
     const [errorMessage, setErrorMessage] = useState('');
-    const [isLoggedIn,setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const navigate = useNavigate('');
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-            if (email==="admin@email.com"&&password==="123123"){
-                setIsLoggedIn(true);
-                navigate('/');
-                alert('เข้าสู่ระบบสำเร็จ');
-                
-            } 
+        if (email === "admin@admin.com" && password === "123123") {
+            setIsLoggedIn(true);
+            navigate('/');
+            alert('เข้าสู่ระบบสำเร็จ');
+        } else {
+            alert('เข้าสู่ระบบไม่ถูกต้อง');
+        }
     };
 
     return (
         <div className="login ">
             <div className='border'>
                 <div className="sm:mx-auto sm:w-full sm:max-w-md">
-                    <h2 style={{color:'white'}}>เข้าสู่ระบบ</h2>
+                    <h2 style={{ color: 'white' }}>เข้าสู่ระบบ</h2>
                 </div>
 
                 <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
                     <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
                         <form className="space-y-6" onSubmit={handleSubmit}>
                             <div>
-                                <label style={{color:'white', fontSize:'18'}}>
+                                <label style={{ color: 'white', fontSize: '18' }}>
                                     อีเมล:
                                 </label>
                                 <div className="mt-1">
@@ -47,7 +48,7 @@ const Login = () => {
                             </div>
 
                             <div>
-                                <label style={{color:'white', fontSize:'18'}}>
+                                <label style={{ color: 'white', fontSize: '18' }}>
                                     รหัสผ่าน:
                                 </label>
                                 <div className="mt-5" >
@@ -67,15 +68,15 @@ const Login = () => {
                             )}
 
                             <div>
-                                
-                                 <button
+
+                                <button
                                     type="submit"
                                     className="btn"
-                                    style={{marginTop:'10px'}}
+                                    style={{ marginTop: '10px' }}
                                 >
                                     เข้าสู่ระบบ
                                 </button>
-                               
+
                             </div>
                         </form>
                     </div>

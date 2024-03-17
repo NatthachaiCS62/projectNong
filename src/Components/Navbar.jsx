@@ -1,21 +1,20 @@
-// src/Components/Navbar.jsx
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import "./Header.css";
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogout = () => {
-    // เมื่อคลิกที่ปุ่ม "ออกจากระบบ" เปลี่ยนสถานะ isLoggedIn เป็น false
-    setIsLoggedIn(true);
+    setIsLoggedIn(false);
+    axios.post('/logout', {}).then(() => navigate('/login'));
   };
 
   return (
     <div className="header-container">
       <header className="header bg-blue-500 text-white">
-        <h1 className="text-lg font-bold text-yellow-300">ร้านครูทัศตั๊กแตนทอด</h1>
+        <Link style={{ textDecoration: 'none', color: 'white' }} to='/'>
+          <h1 className="">ร้านครูทัศตั๊กแตนทอด</h1>
+        </Link>
         <nav className="navbar">
           <ul className="flex space-x-4">
             <li>
@@ -29,8 +28,8 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link>
-                <button className="btn">บันทึก</button>
+              <Link to='/producthistory'>
+                <button className="btn">ประวัติการซื้อ</button>
               </Link>
             </li>
             <li>
@@ -39,7 +38,6 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              {/* เช็คสถานะ isLoggedIn เพื่อเปลี่ยนปุ่ม */}
               {isLoggedIn ? (
                 <button className="btn" onClick={handleLogout}>ออกจากระบบ</button>
               ) : (
@@ -51,9 +49,8 @@ function Navbar() {
           </ul>
         </nav>
       </header>
-    </div>
+    </div >
   );
 }
 
 export default Navbar;
-

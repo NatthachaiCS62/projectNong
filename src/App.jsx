@@ -7,6 +7,7 @@ import Login from './Components/Login';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 import ProductForm from './Components/ProductForm';
+import OrderHistory from './Components/OrderHistory';
 
 
 
@@ -33,10 +34,17 @@ function App() {
         />
         <Route path="/product-form" element={
           <>
+            <Navbar />
             <ProductForm />
             <Footer />
           </>}
-
+        />
+        <Route path="/producthistory" element={
+          <>
+            <Navbar />
+            <OrderHistory />
+            <Footer />
+          </>}
         />
 
 

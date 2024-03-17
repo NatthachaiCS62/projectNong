@@ -4,41 +4,42 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-image: url('D:\myProject\work1\react-project-app\src\picture\ล็อกอิน.png'); /* เปลี่ยน path/to/your/image.jpg เป็นที่อยู่ของรูปภาพของคุณ */
-  background-size: cover; /* ปรับขนาดรูปภาพให้เต็มพื้นที่ */
-  background-position: center; /* จัดตำแหน่งรูปภาพให้อยู่ตรงกลาง */
+  background-image: url('..\assets\ล็อกอิน.png');
+  background-size: cover;
+  background-position: center;
+  margin-top: 250px;
 }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="date"],
-  input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button[type="submit"] {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #45a049;
-  }
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
