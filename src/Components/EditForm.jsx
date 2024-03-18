@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import EditProduct from './EditProduct';
 
 const OrderHistory = () => {
     const [products, setProducts] = useState([]);
@@ -13,6 +14,21 @@ const OrderHistory = () => {
                 console.error('Error fetching products:', error);
             });
     }, []);
+
+    const handleUpdate = updatedProduct => {
+        const updatedProducts = products.map(product => {
+            if (product._id === updatedProduct._id) {
+                return updatedProduct;
+            }
+            return product;
+        });
+        setProducts(updatedProducts);
+    };
+
+    const handleDelete = productId => {
+        const removeProducts = products.filter(product => product._id !== productId);
+        setProducts(removeProducts);
+    };
 
     return (
         <div className='container' style={{ marginTop: "150px ", textAlign: 'center' }}>
@@ -29,17 +45,12 @@ const OrderHistory = () => {
                                         <th>ที่อยู่จัดส่ง</th>
                                         <th>ชื่อสินค้า</th>
                                         <th>จำนวน</th>
+                                        <th>แก้ไข/ลบ</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {products.map(product => (
-                                        <tr key={product._id}>
-                                            <td>{product.productCode}</td>
-                                            <td>{product.date}</td>
-                                            <td>{product.shippingAddress}</td>
-                                            <td>{product.productName}</td>
-                                            <td>{product.quantity}</td>
-                                        </tr>
+                                        <EditProduct key={product._id} product={product} onUpdate={handleUpdate} onDelete={handleDelete} />
                                     ))}
                                 </tbody>
                             </table>

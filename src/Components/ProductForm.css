@@ -1,4 +1,4 @@
-.container {
+.contained {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -8,6 +8,8 @@
   background-size: cover;
   background-position: center;
   margin-top: 250px;
+  width: 100%;
+
 }
 
 .form-group {

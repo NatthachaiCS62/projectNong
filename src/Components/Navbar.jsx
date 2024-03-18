@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { auth } from '../firebase/config';
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const handleLogout = () => {
+    auth.signOut();
     setIsLoggedIn(false);
-    axios.post('/logout', {}).then(() => navigate('/login'));
   };
 
   return (
@@ -33,7 +46,7 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to='/editproduct'>
                 <button className="btn">แก้ไขรายการ</button>
               </Link>
             </li>
@@ -49,7 +62,7 @@ function Navbar() {
           </ul>
         </nav>
       </header>
-    </div >
+    </div>
   );
 }
 
