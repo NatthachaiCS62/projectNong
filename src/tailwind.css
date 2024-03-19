@@ -56,11 +56,16 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
   transition: background-color 0.3s ease;
 }
 
 .btn:hover {
   background-color: #45a049;
+}
+
+.button-center {
+  text-align: center;
 }
 
 /* กำหนดรูปภาพพื้นหลังของหน้าเว็บ */
@@ -110,14 +115,15 @@ body {
   border: 5px rgba(134, 126, 126, 0.5);
   display: flex;
   justify-content: center;
+  align-items: center;
   border-radius: 20px;
-  padding: 5px 10px;
+  padding: 10px 10px;
   margin: 10px 10px 10px ;
   width: 300px;
   height: 300px;
-  align-items: center;
   flex-direction: column;
-}
+} 
+
 
 
 

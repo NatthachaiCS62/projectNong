@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase/config';
 import { useNavigate } from 'react-router-dom';
 
+
 function Login() {
     const navigate = useNavigate();
     const [signInWithEmailAndPassword, user] = useSignInWithEmailAndPassword(auth);
@@ -24,22 +25,28 @@ function Login() {
     console.log(user);
 
     return (
-        <div className="App">
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="submit">
-                    Sign In
-                </button>
-            </form>
+        <div className='login'>
+            <div className='border'>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Email Address" // เพิ่ม placeholder เพื่อแสดงตัวอย่าง
+                    />
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Password" // เพิ่ม placeholder เพื่อแสดงตัวอย่าง
+                    />
+                    <div className='button-center'>
+                        <button  type="submit">
+                            Sign In
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }
